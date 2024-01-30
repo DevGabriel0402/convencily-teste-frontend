@@ -5,11 +5,11 @@ import IconAcademy from '../../assets/Academy-award.svg'
 
 
 
-const Card = ({ movieData }) => {
+const Card = ({ movieData, thumbnail }) => {
     return (
         <Container>
             <div className="thumb">
-                <img src={IconMovie} alt="movie-logo" />
+                <img src={thumbnail.imageUrl} alt={thumbnail.imageAlt} />
             </div>
             <div className="description">
                 <div>

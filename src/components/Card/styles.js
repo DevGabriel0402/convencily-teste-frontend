@@ -13,12 +13,19 @@ export const Container = styled.div`
   .thumb {
     display: flex;
     border-radius: 5px 5px 0 0;
-    padding: 48px;
     justify-content: center;
     align-items: center;
     align-self: stretch;
     border: 1px solid #abbbcc;
     background: #abbbcc;
+
+    img {
+      width: 240px;
+      height: 164px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 5px 5px 0 0;
+    }
 
     @media (max-width: 495px) {
       width: 325px;
