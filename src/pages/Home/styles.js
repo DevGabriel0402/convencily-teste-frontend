@@ -16,4 +16,21 @@ export const ContainerCard = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
+  margin-bottom: 4.5rem;
+`;
+
+export const Footer = styled.div`
+  width: 100vw;
+  text-align: center;
+  padding: 5px;
+  color: #fff;
+  background-color: #4c16c9;
+  font-size: 14px;
+  font-weight: 400;
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+  }
 `;

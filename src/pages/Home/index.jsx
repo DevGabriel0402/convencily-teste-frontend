@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import api from '../../services/api'
-import { Container, ContainerCard } from './styles'
+import { Container, ContainerCard, Footer } from './styles'
 import Header from '../../components/Header/index'
 import Card from '../../components/Card/index'
 
@@ -90,7 +90,7 @@ function Home() {
       </ContainerCard>
 
 
-
+      <Footer>Teste feito por <a href="https://www.instagram.com/eu.gabrielvieira/" target='_blank'>@Gabriel 🤞</a></Footer>
     </Container>
   )
 }
