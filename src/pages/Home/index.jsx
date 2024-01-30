@@ -12,6 +12,7 @@ function Home() {
 
   const [movies, setMovies] = useState("")
   const [filteredMovies, setFilteredMovies] = useState()
+  const [loading, setLoading] = useState(true); // Adicionando estado para controle de loading
 
   const thumbnail = [
     {
@@ -59,14 +60,19 @@ function Home() {
   useEffect(() => {
 
     async function loadData() {
-      const {
-        data: { docs }
-      } = await api.get('movie')
+      try {
+        const {
+          data: { docs }
+        } = await api.get('movie');
 
-      // Aqui  guardamos as informações dos movies
-      setMovies(docs)
-      setFilteredMovies(docs)
-      console.log(docs)
+        setMovies(docs);
+        setFilteredMovies(docs);
+        setLoading(false); // Marcar o carregamento como concluído
+      } catch (error) {
+        console.error('Erro ao carregar dados:', error);
+        // Você pode adicionar tratamento de erro aqui se necessário
+        setLoading(false); // Marcar o carregamento como concluído mesmo em caso de erro
+      }
     }
 
     loadData()
@@ -82,13 +88,19 @@ function Home() {
     <Container>
       <Header movies={movies} setFilteredMovies={setFilteredMovies} />
 
-      <ContainerCard className='container-card'>
-        {filteredMovies && filteredMovies.map((movie, index) => (
-          <Card movieData={movie} thumbnail={thumbnail[index]} key={movie._id} />
-        )
-        )}
-      </ContainerCard>
+      {loading ? (
+        <div className='loading'>
+          <div className='elemento-load'></div>
+        </div> // Renderizar um indicador de loading enquanto os dados estão sendo carregados
+      ) : (
 
+        <ContainerCard className='container-card'>
+          {filteredMovies && filteredMovies.map((movie, index) => (
+            <Card movieData={movie} thumbnail={thumbnail[index]} key={movie._id} />
+          )
+          )}
+        </ContainerCard>
+      )}
 
       <Footer>Teste feito por <a href="https://www.instagram.com/eu.gabrielvieira/" target='_blank'>@Gabriel 🤞</a></Footer>
     </Container>
