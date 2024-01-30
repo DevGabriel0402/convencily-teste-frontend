@@ -9,7 +9,7 @@ export const Container = styled.div`
   .loading {
     height: 90vh;
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
   }
 
