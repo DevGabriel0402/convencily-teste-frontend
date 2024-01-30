@@ -16,12 +16,11 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     align-self: stretch;
-    border: 1px solid #abbbcc;
     background: #abbbcc;
 
     img {
-      width: 240px;
-      height: 164px;
+      width: 100%;
+      height: 150px;
       aspect-ratio: 1/1;
       object-fit: cover;
       border-radius: 5px 5px 0 0;
@@ -30,6 +29,7 @@ export const Container = styled.div`
     @media (max-width: 495px) {
       width: 325px;
     }
+
     @media (max-width: 330px) {
       width: 300px;
     }
@@ -67,6 +67,10 @@ export const Container = styled.div`
   .award {
     display: flex;
     font-size: 14px;
+
+    p {
+      white-space: nowrap;
+    }
   }
 
   .brmilion {

@@ -54,9 +54,15 @@ export const Container = styled.div`
       font-size: 14px;
       border: 1px solid #c5d2e0;
       border-radius: 2px;
+      caret-color: #4c00ff;
+
       &:focus {
         outline: none;
         border: 2px solid #4c00ff;
+      }
+      &::selection {
+        background-color: #4c00ff;
+        color: #fff;
       }
     }
     @media (max-width: 499px) {
